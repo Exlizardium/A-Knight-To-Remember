@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5804060808743880373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5804060808743880370}
+  - component: {fileID: 5804060808743880371}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5804060808743880370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804060808743880373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.29799503, y: 0.7705228, z: -0.20057605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5804060808743880371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804060808743880373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30343a1fe813174581b2d09e9efcb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Main theme
+    clip: {fileID: 8300000, guid: c37f7a0a8634ba340af609a917242680, type: 3}
+    volume: 0.155
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Enemy death
+    clip: {fileID: 8300000, guid: 516c6a1f7ce508847a95d7578af01ac6, type: 3}
+    volume: 0.155
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: b4cf95f4fc0d98740af2a5b202e0b8ed, type: 3}
+    volume: 0.079
+    pitch: 0.37
+    loop: 0
+    source: {fileID: 0}
+  - name: Fireball
+    clip: {fileID: 8300000, guid: 12a66bb6af74e1241aace276c8b64d96, type: 3}
+    volume: 0.155
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Footsteps
+    clip: {fileID: 8300000, guid: 625615fe3a261ae4ab8791a796de2c6a, type: 3}
+    volume: 0.155
+    pitch: 2
+    loop: 1
+    source: {fileID: 0}
+  - name: Game over
+    clip: {fileID: 8300000, guid: d9de74162660e6949adb91c51e2d5935, type: 3}
+    volume: 0.155
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Level transition
+    clip: {fileID: 8300000, guid: ab8a7c8901559ba4d992199f4c840a46, type: 3}
+    volume: 0.038
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: Menu
+    clip: {fileID: 8300000, guid: b15305be3c61525409ebc1659627e00a, type: 3}
+    volume: 0.155
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Portal closed
+    clip: {fileID: 8300000, guid: f0c55d9e6b82df544b1566cc52fe2ff1, type: 3}
+    volume: 0.155
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shield
+    clip: {fileID: 8300000, guid: 1268443fc96d4f745b231200a3f96a90, type: 3}
+    volume: 0.113
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Slash
+    clip: {fileID: 8300000, guid: 0bc8839cf3d65c948839a66512c93542, type: 3}
+    volume: 0.058
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Strike
+    clip: {fileID: 8300000, guid: 48a2cb7b26d3f474d911e84ef0fa46d7, type: 3}
+    volume: 0.065
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Player damaged
+    clip: {fileID: 8300000, guid: 0406b4c36822aa146b10ca009b0fffc3, type: 3}
+    volume: 0.065
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Bookshelf
+    clip: {fileID: 8300000, guid: e4188ce2d45f4f04b8de72d1969556de, type: 3}
+    volume: 0.065
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Beer
+    clip: {fileID: 8300000, guid: 69bebdf2f2600834baf57ee9955c67a2, type: 3}
+    volume: 0.065
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Boss laugh
+    clip: {fileID: 8300000, guid: 63b7ef0d4695eb94eab78f7cb9fb89b5, type: 3}
+    volume: 0.065
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Boss theme
+    clip: {fileID: 8300000, guid: fa6819c2ebbf46a41b2158cdf452d591, type: 3}
+    volume: 0.065
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Enemy attack
+    clip: {fileID: 8300000, guid: fca7e32b3abfba54f8c79b5500735a43, type: 3}
+    volume: 0.065
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Intro
+    clip: {fileID: 8300000, guid: f38c0017065c3ca42a5530681a603239, type: 3}
+    volume: 0.065
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}

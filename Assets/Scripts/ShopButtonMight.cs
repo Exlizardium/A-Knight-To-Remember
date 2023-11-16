@@ -1,0 +1,68 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class ShopButtonMight : MonoBehaviour
+{
+    private Gold gold;
+    private Player_Combat player;
+
+    [SerializeField] private TextMeshProUGUI itemPriceText;
+    [SerializeField] private TextMeshProUGUI moneyLeft;
+    [SerializeField] private TextMeshProUGUI MightStat;
+    [SerializeField] private Button purchaseButton;
+    [SerializeField] private float itemPrice = 100f;
+    private float priceMultiplier = 1;
+    private bool transaction = false;
+
+    private void Start()
+    {
+        gold = FindObjectOfType<Gold>();
+        player = FindObjectOfType<Player_Combat>();
+        purchaseButton = GetComponent<Button>();
+        itemPriceText.text = itemPrice.ToString();
+        MightStat.text = player.playerDamage.ToString();
+    }
+
+    private void CheckItemPurchase()
+    {
+        if (gold.goldPoints >= itemPrice && transaction == false)
+        {
+            player.playerDamage++;
+            gold.goldPoints -= itemPrice;
+            PriceAndMoneyCalculation();
+            transaction = true;
+        }
+    }
+
+    private void PriceAndMoneyCalculation()
+    {
+        priceMultiplier++;
+        itemPrice *= priceMultiplier;
+        itemPriceText.text = itemPrice.ToString();
+    }
+
+    private void CheckCredibility()
+    {
+        if (gold.goldPoints < 100)
+        {
+            purchaseButton.interactable = false;
+        }
+        else
+        {
+            purchaseButton.interactable = true;
+        }
+    }
+
+    private void Update()
+    {
+        CheckCredibility();
+
+        moneyLeft.text = gold.goldPoints.ToString();
+        MightStat.text = player.playerDamage.ToString();
+        purchaseButton.onClick.AddListener(CheckItemPurchase);
+        transaction = false;
+    }
+}
