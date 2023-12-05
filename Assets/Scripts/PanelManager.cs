@@ -24,6 +24,7 @@ public class PanelManager : MonoBehaviour
     [SerializeField] private GameObject playerUIPanel;
     private Player_Movement player;
     [SerializeField] private GameObject objectThatIsBeingInteractedWith;
+    private AudioManager audioManager;
 
     private void Start()
     {
@@ -46,6 +47,7 @@ public class PanelManager : MonoBehaviour
         temporaryPanels = GameObject.FindGameObjectsWithTag("Temporary panels");
 
         player = FindObjectOfType<Player_Movement>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         if (shopPanel != null)
         {
@@ -211,10 +213,19 @@ public class PanelManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
     }
 
+    private void footstepsStopperWhenPanelIsActive()
+    {
+        if (panelIsActive)
+        {
+            audioManager.Stop("Footsteps");
+        }
+    }
+
     private void Update()
     {
         CheckVisibilityForGamePause();
         TutorialScreen();
         PromptToInteract();
+        footstepsStopperWhenPanelIsActive();
     }
 }

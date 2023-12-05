@@ -30,6 +30,10 @@ public class ShopButtonMajerky : MonoBehaviour
         if (gold.goldPoints >= itemPrice && transaction == false)
         {
             player.health += 50;
+            if (player.health > 100)
+            {
+                player.health = 100;
+            }
             player.healthbarImage.fillAmount = player.health / 100f;
             gold.goldPoints -= itemPrice;
             PriceAndMoneyCalculation();
@@ -45,7 +49,7 @@ public class ShopButtonMajerky : MonoBehaviour
 
     private void CheckCredibility()
     {
-        if (gold.goldPoints < 100)
+        if (gold.goldPoints < itemPrice || player.health >= 100)
         {
             purchaseButton.interactable = false;
         }

@@ -29,7 +29,7 @@ public class Button_Trader : MonoBehaviour
 
     private void CheckCredibility()
     {
-        if (gold.goldPoints < cheapGoodsPrice)
+        if (gold.goldPoints < cheapGoodsPrice || player.health >= 100)
         {
             cheapBoozeButton.interactable = false;
             cheapMeatButton.interactable = false;
@@ -61,6 +61,10 @@ public class Button_Trader : MonoBehaviour
             gold.goldPoints -= cheapGoodsPrice;
             remainingFunds.text = gold.goldPoints.ToString();
             player.health += healthToAdd;
+            if (player.health > 100)
+            {
+                player.health = 100;
+            }
             player.healthbarImage.fillAmount = player.health / 100f;            
 
             meatPurchased = true;
